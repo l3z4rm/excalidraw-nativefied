@@ -2,6 +2,7 @@
 A simple Electron version of the Excalidraw website for Linux, created by Nativefier
 ---
 ## Setup
+---
 To set up the app, simply copy the following command into your terminal:
 ---
 ```
@@ -10,4 +11,5 @@ cd excalidraw-nativefied && \
 ./setup.sh
 ```
 ---
-WARNING: This thing isn't even complete yet!
+
+After the setup completes, simply update your desktop application cache accordingly.
