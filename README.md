@@ -1,17 +1,17 @@
 # excalidraw-nativefied
-A simple Electron version of the Excalidraw website for Linux, created by Nativefier
+
+A simple Electron wrapper for the Excalidraw website on Linux, created with Nativefier.
 
 ## Setup
 
-To set up the app, simply copy the following command into your terminal:
+Run the following commands in your terminal:
 
+```bash
+git clone https://github.com/l3z4rm/excalidraw-nativefied
+cd excalidraw-nativefied
+chmod +x ./setup.sh && ./setup.sh
 ```
-git clone https://github.com/l3z4rm/excalidraw-nativefied && \
-cd excalidraw-nativefied && \
-./setup.sh
-```
 
+After setup finishes, refresh your desktop application cache if needed.
 
-After the setup completes, simply update your desktop application cache accordingly.
-
-WARNING: This setup scripts requires root acces because it copies some files to `/usr/lib` and `/usr/bin`.
+**Warning:** this setup script requires root access.
