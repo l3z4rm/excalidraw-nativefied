@@ -2,6 +2,7 @@
 set -euo pipefail
 
 APP_NAME="Excalidraw"
+APP_BIN="excalidraw"
 WEBSITE="https://excalidraw.com"
 
 BUILD_DIR="$HOME/.local/share/nativefier-build/excalidraw"
@@ -48,15 +49,12 @@ log "Installing app to $INSTALL_DIR..."
 sudo rm -rf "$INSTALL_DIR"
 sudo mkdir -p /usr/lib
 sudo cp -r "$APP_SRC" "$INSTALL_DIR"
+sudo mv "$INSTALL_DIR/Excalidraw" "$INSTALL_DIR/$APP_BIN"
 
 log "Creating wrapper script..."
 sudo tee "$WRAPPER" >/dev/null <<'EOF'
 #!/bin/sh
 cd /usr/lib/excalidraw || exit 1
-
-APP_BIN="$(find . -maxdepth 1 -type f -perm -111 ! -name 'chrome-sandbox' | head -n 1)"
-[ -n "$APP_BIN" ] || exit 1
-
 exec "$APP_BIN" --no-sandbox "$@"
 EOF
 sudo chmod 755 "$WRAPPER"
